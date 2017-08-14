@@ -1,0 +1,34 @@
+$theme: def;
+
+// blue-beans, rigers-rovers, pastry-pizza
+$brand: "blue-beans";
+
+$text-color: #222222;
+$theme-color: #170a48;
+$body-background-color: white;
+$secondary-color: #f27731;
+$ternary-color: #ccf962;
+$link-color: $secondary-color;
+$menu-item-color: white;
+
+@if $theme == dark {
+	$text-color: #fff;
+	$body-background-color: #22222a;
+	$theme-color: #42424a;
+	$secondary-color: #c24721;
+	$ternary-color: #698932;
+} @else if $theme == light {
+	$text-color: #000;
+	$body-background-color: #fff;
+	$theme-color: #372a27;
+	$secondary-color: #d26741;
+	$ternary-color: #b9da63;
+}
+
+$text-font: Verdana, Arial, sans-serif;
+$headline-font: "Palatino Linotype", Georgia, serif;
+
+$content-width: 960px;
+$header-height: 60px;
+$footer-height: 90px;
+$col: col-width($columns: 8);

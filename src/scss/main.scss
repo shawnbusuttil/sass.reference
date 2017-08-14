@@ -1,0 +1,109 @@
+@import "functions";
+@import "variables";
+@import "mixins";
+
+// root-level mixin
+@include fancy-links;
+* {
+  @include skin;
+}
+
+body {
+  font-family: $text-font;
+  color: $text-color;
+  font-size: em(18px);
+  background-color: $body-background-color;
+}
+
+h1, h2, h3, h4 {
+  font-family: $headline-font;
+}
+
+h2 {
+  @include large-text;
+}
+
+p {
+  font-family:  $text-font;
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: darken($link-color, 15%);
+  }
+}
+
+.error {
+  color: red;
+}
+
+.warning-button {
+  @include warning;
+  padding: 8px 12px;
+}
+
+.cta-button {
+  @extend .warning-button;
+  @extend .error;
+  @include rounded;
+  font-weight: bold;
+}
+
+#header {
+  @include box($radius: 8px, $border: 1px solid #999);
+  @include box-shadow(2px 0px 4px #999, 1px 1px 6px $secondary-color);
+  height: $header-height;
+  background-color: $theme-color;
+
+  #main-menu {
+    li {
+      display: inline;
+    }
+    a {
+      color: $menu-item-color;
+      border-bottom: 1px solid transparentize(#fefefe, 1);
+      transition: border-bottom 1s ease-in-out;
+      padding: 6px 8px;
+
+      &:hover {
+        border-bottom: 1px solid opacify(#fefefe, .5);
+      }
+    }
+  }
+  
+  #logo {
+
+  }
+}
+
+#main {
+  width: $content-width;
+  margin: 0 auto;
+
+  #content {
+    float: left;
+    width: 6 * $col;
+  }
+
+  #sidebar {
+    float: right;
+    width: 2 * $col;
+
+    li {
+      list-style-type: none;
+      padding: em(16px) em(20px);
+      border-bottom: 1px dashed #999;
+
+      &:hover {
+        background-color: #efefef;
+      }
+    }
+  }
+}
+
+#footer {
+  height: $footer-height;
+  background-color: $ternary-color;
+}

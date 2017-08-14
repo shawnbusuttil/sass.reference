@@ -1,0 +1,26 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"module": "es2015",
+		"target": "es5",
+		"moduleResolution": "node",
+		"lib": [
+			"dom",
+			"es2015"
+		],
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"types": [
+			"node"
+		],
+		"typeRoots": [
+			"node_modules/@types"
+		]
+	},
+	"include": [
+		"./src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
